@@ -1,0 +1,7 @@
+# vi temporary files
+*.swp
+
+# fkeep artifacts
+log
+tmp
+*.logf
