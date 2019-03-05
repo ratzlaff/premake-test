@@ -16,6 +16,15 @@ function fkeep.defaultProject(inName)
 		location "log"
 		kind "ConsoleApp"
 		files "main.cpp"
+		links {inName .. "_shared"}
+
+	project(inName .. "_shared")
+		objdir "tmp/obj/%{cfg.name}"
+		targetdir "tmp/lib/%{cfg.name}"
+		location "log"
+		kind "SharedLib"
+		files "plugin.cpp"
+
 end
 
 return fkeep
