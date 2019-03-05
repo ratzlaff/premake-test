@@ -8,10 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		B68AC1CC0D182C3EE591400C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E21F5234E590246666FCC874 /* main.cpp */; };
+		F7DA694C6ADECA7ECF51BF8C /* libmain_shared.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B86FD2F4472103E6A2AB2134 /* libmain_shared.dylib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5AC876BDB609CA2F896414FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 60C4734F9054D241FCB5818F /* main_shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A7C6F31DD758C20FB266015D;
+			remoteInfo = libmain_shared.dylib;
+		};
+		AD02E95608443CC8DB9E8796 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 60C4734F9054D241FCB5818F /* main_shared.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 35BE5B635DF914154594A1A3;
+			remoteInfo = libmain_shared.dylib;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		045DAE2E56E3D92029283C6E /* main */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = main; path = main; sourceTree = BUILT_PRODUCTS_DIR; };
+		60C4734F9054D241FCB5818F /* libmain_shared.dylib */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "main_shared.xcodeproj"; path = main_shared.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E21F5234E590246666FCC874 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -20,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7DA694C6ADECA7ECF51BF8C /* libmain_shared.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -31,8 +51,25 @@
 			children = (
 				E21F5234E590246666FCC874 /* main.cpp */,
 				A6C936B49B3FADE6EA134CF4 /* Products */,
+				9D968EAA920D05DCE0E0A4EA /* Projects */,
 			);
 			name = main;
+			sourceTree = "<group>";
+		};
+		3695A05D58614D8F9516769D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B86FD2F4472103E6A2AB2134 /* libmain_shared.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9D968EAA920D05DCE0E0A4EA /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				60C4734F9054D241FCB5818F /* main_shared.xcodeproj */,
+			);
+			name = Projects;
 			sourceTree = "<group>";
 		};
 		A6C936B49B3FADE6EA134CF4 /* Products */ = {
@@ -57,6 +94,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				244DDD6646198A9882CEB3A6 /* PBXTargetDependency */,
 			);
 			name = main;
 			productInstallPath = "$(HOME)/bin";
@@ -74,12 +112,28 @@
 			hasScannedForEncodings = 1;
 			mainGroup = 12A709C583EDB7F711E00005 /* main */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3695A05D58614D8F9516769D /* Products */;
+					ProjectRef = 60C4734F9054D241FCB5818F /* main_shared.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				CBF178541C050D069E833E94 /* main */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B86FD2F4472103E6A2AB2134 /* libmain_shared.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libmain_shared.dylib;
+			remoteRef = 5AC876BDB609CA2F896414FD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		0BAB3D3E75BDBF300EE8AB7E /* Resources */ = {
@@ -102,6 +156,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		244DDD6646198A9882CEB3A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libmain_shared.dylib;
+			targetProxy = AD02E95608443CC8DB9E8796 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 /* End PBXVariantGroup section */
 
@@ -116,9 +178,9 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				OBJROOT = obj/Debug;
+				OBJROOT = ../tmp/obj/Debug/Debug/main;
 				ONLY_ACTIVE_ARCH = NO;
-				SYMROOT = bin/Debug;
+				SYMROOT = ../tmp/bin/Debug;
 			};
 			name = Debug;
 		};
@@ -126,7 +188,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CONFIGURATION_BUILD_DIR = bin/Release;
+				CONFIGURATION_BUILD_DIR = ../tmp/bin/Release;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
 				INSTALL_PATH = /usr/local/bin;
@@ -138,7 +200,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CONFIGURATION_BUILD_DIR = bin/Debug;
+				CONFIGURATION_BUILD_DIR = ../tmp/bin/Debug;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
 				INSTALL_PATH = /usr/local/bin;
@@ -156,9 +218,9 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				OBJROOT = obj/Release;
+				OBJROOT = ../tmp/obj/Release/Release/main;
 				ONLY_ACTIVE_ARCH = NO;
-				SYMROOT = bin/Release;
+				SYMROOT = ../tmp/bin/Release;
 			};
 			name = Release;
 		};

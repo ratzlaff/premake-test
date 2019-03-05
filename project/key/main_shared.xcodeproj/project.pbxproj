@@ -1,0 +1,190 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B4D63AE010178E52E371D920 /* plugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D1D9E084430393A344C3448 /* plugin.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2D1D9E084430393A344C3448 /* plugin.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = plugin.cpp; path = ../plugin.cpp; sourceTree = "<group>"; };
+		A7C6F31DD758C20FB266015D /* libmain_shared.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; name = libmain_shared.dylib; path = libmain_shared.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		86C9E20D71B607FFB99BD04D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A6C936B49B3FADE6EA134CF4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A7C6F31DD758C20FB266015D /* libmain_shared.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C59A259B2FACA78DC8D793DB /* main_shared */ = {
+			isa = PBXGroup;
+			children = (
+				2D1D9E084430393A344C3448 /* plugin.cpp */,
+				A6C936B49B3FADE6EA134CF4 /* Products */,
+			);
+			name = main_shared;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		35BE5B635DF914154594A1A3 /* main_shared */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75052A6C5FF1505EA7D718AC /* Build configuration list for PBXNativeTarget "main_shared" */;
+			buildPhases = (
+				F6B162ADE19D889F298350ED /* Resources */,
+				605E7C044B4AA1F693306A44 /* Sources */,
+				86C9E20D71B607FFB99BD04D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = main_shared;
+			productName = main_shared;
+			productReference = A7C6F31DD758C20FB266015D /* libmain_shared.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "main_shared" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 1;
+			mainGroup = C59A259B2FACA78DC8D793DB /* main_shared */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				35BE5B635DF914154594A1A3 /* libmain_shared.dylib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F6B162ADE19D889F298350ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		605E7C044B4AA1F693306A44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4D63AE010178E52E371D920 /* plugin.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6357148A66C7E6BCE8348ACA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OBJROOT = ../tmp/obj/Debug/Debug/main_shared;
+				ONLY_ACTIVE_ARCH = NO;
+				SYMROOT = ../tmp/lib/Debug;
+			};
+			name = Debug;
+		};
+		7FF04132F112E224A6D98F72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = ../tmp/lib/Debug;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_PREFIX = lib;
+				GCC_DYNAMIC_NO_PIC = NO;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = main_shared;
+			};
+			name = Debug;
+		};
+		83C870ACC817161E0A3E4EEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = ../tmp/lib/Release;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_PREFIX = lib;
+				GCC_DYNAMIC_NO_PIC = NO;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = main_shared;
+			};
+			name = Release;
+		};
+		89D639442CC45FF6BBEA3F84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OBJROOT = ../tmp/obj/Release/Release/main_shared;
+				ONLY_ACTIVE_ARCH = NO;
+				SYMROOT = ../tmp/lib/Release;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "main_shared" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6357148A66C7E6BCE8348ACA /* Debug */,
+				89D639442CC45FF6BBEA3F84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		75052A6C5FF1505EA7D718AC /* Build configuration list for PBXNativeTarget "libmain_shared.dylib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FF04132F112E224A6D98F72 /* Debug */,
+				83C870ACC817161E0A3E4EEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+};
+rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

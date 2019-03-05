@@ -26,9 +26,6 @@ ALL_CPPFLAGS += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
 ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS)
 ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS)
 ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-LIBS +=
-LDDEPS +=
-ALL_LDFLAGS += $(LDFLAGS) -s
 LINKCMD = $(CXX) -o "$@" $(OBJECTS) $(RESOURCES) $(ALL_LDFLAGS) $(LIBS)
 define PREBUILDCMDS
 endef
@@ -38,14 +35,20 @@ define POSTBUILDCMDS
 endef
 
 ifeq ($(config),debug)
-TARGETDIR = bin/Debug
+TARGETDIR = ../tmp/bin/Debug
 TARGET = $(TARGETDIR)/main
-OBJDIR = obj/Debug
+OBJDIR = ../tmp/obj/Debug/Debug/main
+LIBS += ../tmp/lib/Debug/libmain_shared.so
+LDDEPS += ../tmp/lib/Debug/libmain_shared.so
+ALL_LDFLAGS += $(LDFLAGS) -Wl,-rpath,'$$ORIGIN/../../lib/Debug' -s
 
 else ifeq ($(config),release)
-TARGETDIR = bin/Release
+TARGETDIR = ../tmp/bin/Release
 TARGET = $(TARGETDIR)/main
-OBJDIR = obj/Release
+OBJDIR = ../tmp/obj/Release/Release/main
+LIBS += ../tmp/lib/Release/libmain_shared.so
+LDDEPS += ../tmp/lib/Release/libmain_shared.so
+ALL_LDFLAGS += $(LDFLAGS) -Wl,-rpath,'$$ORIGIN/../../lib/Release' -s
 
 else
   $(error "invalid configuration $(config)")
