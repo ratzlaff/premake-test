@@ -19,13 +19,16 @@ endif
 # #############################################
 
 RESCOMP = windres
-DEFINES +=
-INCLUDES +=
+DEFINES += -DMAIN_ONLY
+INCLUDES += -I../../../src
 FORCE_INCLUDE +=
 ALL_CPPFLAGS += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
 ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS)
 ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS)
 ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
+LIBS +=
+LDDEPS +=
+ALL_LDFLAGS += $(LDFLAGS) -s
 LINKCMD = $(CXX) -o "$@" $(OBJECTS) $(RESOURCES) $(ALL_LDFLAGS) $(LIBS)
 define PREBUILDCMDS
 endef
@@ -37,18 +40,12 @@ endef
 ifeq ($(config),debug)
 TARGETDIR = ../tmp/bin/Debug
 TARGET = $(TARGETDIR)/main
-OBJDIR = ../tmp/obj/Debug/Debug/main
-LIBS += ../tmp/lib/Debug/libmain_shared.so
-LDDEPS += ../tmp/lib/Debug/libmain_shared.so
-ALL_LDFLAGS += $(LDFLAGS) -Wl,-rpath,'$$ORIGIN/../../lib/Debug' -s
+OBJDIR = ../tmp/obj/Debug
 
 else ifeq ($(config),release)
 TARGETDIR = ../tmp/bin/Release
 TARGET = $(TARGETDIR)/main
-OBJDIR = ../tmp/obj/Release/Release/main
-LIBS += ../tmp/lib/Release/libmain_shared.so
-LDDEPS += ../tmp/lib/Release/libmain_shared.so
-ALL_LDFLAGS += $(LDFLAGS) -Wl,-rpath,'$$ORIGIN/../../lib/Release' -s
+OBJDIR = ../tmp/obj/Release
 
 else
   $(error "invalid configuration $(config)")
@@ -125,7 +122,7 @@ endif
 # File Rules
 # #############################################
 
-$(OBJDIR)/main.o: ../main.cpp
+$(OBJDIR)/main.o: ../../../src/main.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 
