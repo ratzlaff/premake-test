@@ -4,5 +4,5 @@
 
 void shared_print(const std::string& inFrom)
 {
-    printf("Hello from %s!\n", inFrom.c_str());
+    printf("Hello from shared: %s!\n", inFrom.c_str());
 }
