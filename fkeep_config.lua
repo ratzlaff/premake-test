@@ -5,7 +5,6 @@ function fkeep.defaultWorkspace(inName)
 	workspace(inName)
 		configurations {"Debug", "Release"}
 		location "tmp"
-		fkeep.defaultProject(inName)
 end
 
 function fkeep.defaultProject(inName)
@@ -16,7 +15,6 @@ function fkeep.defaultProject(inName)
 		targetdir "tmp/bin/%{cfg.name}"
 		location "log"
 		kind "ConsoleApp"
-		files { "%{prj.base}/src/main.cpp" }
 		includedirs { "%{prj.base}/src" }
 end
 
@@ -48,6 +46,7 @@ end
 function fkeep.defaultSetup()
 	fkeep.defaultWorkspace()
 	fkeep.defaultProject()
+		files { "%{prj.base}/src/main.cpp" }
 end
 
 premake.api.register {
