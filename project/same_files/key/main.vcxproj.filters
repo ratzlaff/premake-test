@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="same">
+      <UniqueIdentifier>{2BCA9D7C-1701-9F0D-C0ED-8410AC031B0F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\main.cpp" />
+    <ClCompile Include="..\..\..\src\same\Main.cpp">
+      <Filter>same</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
